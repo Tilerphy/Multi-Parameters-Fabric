@@ -23,6 +23,7 @@ public class MultiParametersJsonValueProvider : IValueProvider
                 JsonTextReader s = new JsonTextReader(new StringReader(debug.Trim()));
                 while (s.Read())
                 {   
+                    //the duplicate path is always useless in current context.
                     if (p.ContainsKey(s.Path))
                     {
                         p[s.Path] = s.Value;
